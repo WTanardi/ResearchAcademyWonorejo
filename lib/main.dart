@@ -30,34 +30,96 @@ class MyApp extends StatelessWidget {
                   fontFamily: 'Poppins'),
             ),
             const Padding(padding: EdgeInsets.only(top: 40)),
-            const Center(
+            Center(
               child: SizedBox(
                 width: 324.0,
                 child: TextField(
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(), labelText: 'Email'),
+                      filled: true,
+                      fillColor: Color(0x10FFFFFF),
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                              width: 1, color: Color(0xFF7CAEF3)),
+                          borderRadius: BorderRadius.circular(12)),
+                      prefixIcon: const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16),
+                        child: Icon(Icons.person_outline_rounded),
+                      ),
+                      prefixIconColor: Color(0xFFFFFFFFFF),
+                      labelStyle: const TextStyle(
+                          color: Color(0x60FFFFFF),
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w500),
+                      labelText: 'Email'),
                 ),
               ),
             ),
             const Padding(padding: EdgeInsets.only(top: 16)),
-            const Center(
+            Center(
               child: SizedBox(
                 width: 324.0,
                 child: TextField(
+                  obscureText: true,
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(), labelText: 'Email'),
+                      filled: true,
+                      fillColor: Color(0x10FFFFFF),
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                              width: 1, color: Color(0xFF7CAEF3)),
+                          borderRadius: BorderRadius.circular(12)),
+                      prefixIcon: const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16),
+                        child: Icon(Icons.lock_outline_rounded),
+                      ),
+                      prefixIconColor: Color(0xFFFFFFFFFF),
+                      labelStyle: const TextStyle(
+                          color: Color(0x60FFFFFF),
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w500),
+                      labelText: 'Password'),
                 ),
               ),
             ),
+            const Padding(padding: EdgeInsets.only(top: 16)),
             Center(
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  elevation: 0,
+              child: SizedBox(
+                width: 324.0,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          elevation: 0,
+                          fixedSize: const Size(260, 48),
+                          backgroundColor: const Color(0xFF7CAEF3),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12))),
+                      onPressed: () {},
+                      child: const Text(
+                        'LOGIN',
+                        style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16),
+                      ),
+                    ),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          elevation: 0,
+                          backgroundColor: const Color(0xFF7CAEF3),
+                          shape: const CircleBorder(),
+                          padding: const EdgeInsets.all(12)),
+                      onPressed: () {},
+                      child: const Icon(
+                        Icons.fingerprint,
+                        color: Colors.white,
+                        size: 24,
+                      ),
+                    ),
+                  ],
                 ),
-                onPressed: () {},
-                child: const Text('Sign In'),
               ),
-            ),
+            )
           ],
         ),
       ),
